@@ -1,4 +1,3 @@
-
 package com.example.demo.model.domain;
 
 import jakarta.persistence.*;

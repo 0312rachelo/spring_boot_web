@@ -57,8 +57,8 @@
                 <a href="#skill" class="nav-item nav-link">기술결험</a>
                 <a href="#service" class="nav-item nav-link">프로젝트</a>
             </div>
-                <a href="/article_list" class="navbar-brand bg-secondary py-3 px-4 mx-3 d-none d-lg-block" target="_blank">
-                    <h1 class="text-primary fw-bold m-0">게시판</h1>
+                    <a href="/board_list" class="navbar-brand bg-secondary py-3 px-4 mx-3 d-none d-lg-block" target="_blank">
+                        <h1 class="text-primary fw-bold m-0">게시판</h1>
                     </a>
                     
 
@@ -381,13 +381,13 @@
         <div class="container">
             <div class="row g-5 mb-5 align-items-center wow fadeInUp" data-wow-delay="0.1s">
                 <div class="col-lg-6">
-                    <h1 class="display-5 mb-0">My Projects</h1>
+                    <h1 class="display-5 mb-0">나의 프로젝트</h1>
                 </div>
                 <div class="col-lg-6 text-lg-end">
                     <ul class="list-inline mx-n3 mb-0" id="portfolio-flters">
-                        <li class="mx-3 active" data-filter="*">All Projects</li>
-                        <li class="mx-3" data-filter=".first">UI/UX Design</li>
-                        <li class="mx-3" data-filter=".second">Graphic Design</li>
+                        <li class="mx-3 active" data-filter="*">전체 프로젝트</li>
+                        <li class="mx-3" data-filter=".first">졸업 작품</li>
+                        <li class="mx-3" data-filter=".second">개인 개발</li>
                     </ul>
                 </div>
             </div>
@@ -454,13 +454,16 @@
 
     <!-- Team Start -->
     <div class="container-xxl py-6 pb-5" id="team">
+        <a class="btnbtn-primary py-3 px-5" href="mailto:your-email@example.com">Contact me directly</a>
+        <a class="btnbtn-primary py-3 px-5" href="tel:+1234567890">Contact me directly</a>
+
         <div class="container">
             <div class="row g-5 mb-5 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="col-lg-6">
-                    <h1 class="display-5 mb-0">Team Members</h1>
+                    <h1 class="display-5 mb-0">프로젝트 팀원들</h1>
                 </div>
                 <div class="col-lg-6 text-lg-end">
-                    <a class="btn btn-primary py-3 px-5" href="">Contact Us</a>
+                    <a class="btn btn-primary py-3 px-5" href="">직접 연락하기</a>
                 </div>
             </div>
             <div class="row g-4">
@@ -603,37 +606,32 @@
                 </div>
                 <div class="col-lg-7 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                     <p class="mb-4">The contact form is currently inactive. Get a functional and working contact form with Ajax & PHP in a few minutes. Just copy and paste the files, add a little code and you're done. <a href="https://htmlcodex.com/contact-form">Download Now</a>.</p>
-                    <form>
+                    <form action="/upload-email" method="post">
                         <div class="row g-3">
-                            <div class="col-md-6">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control" id="name" placeholder="Your Name">
-                                    <label for="name">Your Name</label>
-                                </div>
+                        <div class="col-md-6">
+                        <div class="form-floating">
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required>
+                        <label for="email">귀하의 이메일 주소</label>
+                        </div>
+                        </div>
+                        <div class="col-12">
+                        <div class="form-floating">
+                        <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" required>
+                        <label for="subject">메일 제목</label>
+                        </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-floating">
+                            <textareaclass="form-control" placeholder="message here" id="message" name="message" style="height: 100px" required></textarea>
+                            <label for="message">요청메시지</label>
                             </div>
-                            <div class="col-md-6">
-                                <div class="form-floating">
-                                    <input type="email" class="form-control" id="email" placeholder="Your Email">
-                                    <label for="email">Your Email</label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control" id="subject" placeholder="Subject">
-                                    <label for="subject">Subject</label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-floating">
-                                    <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 100px"></textarea>
-                                    <label for="message">Message</label>
-                                </div>
                             </div>
                             <div class="col-12">
-                                <button class="btn btn-primary py-3 px-5" type="submit">Send Message</button>
+                            <button class="btnbtn-primary py-3 px-5" type="submit">메일보내기(서버업로드)</button>
                             </div>
                         </div>
                     </form>
+                           
                 </div>
             </div>
         </div>
@@ -641,20 +639,19 @@
     <!-- Contact End -->
 
 
-    <!-- Map Start -->
-    <div class="container-xxl pt-5 px-0 wow fadeInUp" data-wow-delay="0.1s">
-        <div class="container-xxl pt-5 px-0">
-            <div class="bg-dark">
-                <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3001156.4288297426!2d-78.01371936852176!3d42.72876761954724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4ccc4bf0f123a5a9%3A0xddcfc6c1de189567!2sNew%20York%2C%20USA!5e0!3m2!1sen!2sbd!4v1603794290143!5m2!1sen!2sbd"
-                frameborder="0" style="width: 100%; height: 450px; border:0;" allowfullscreen="" aria-hidden="false"
-                tabindex="0"></iframe>
-            </div>
-        </div>
+    <!--Map Start -->
+ <div class="container-xxl pt-5 px-0 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="container-xxl pt-5 px-0">
+    <div class="bg-dark">
+    <iframe
+    src="https://www.google.com/maps/embed?pb=생략..."
+    frameborder="0" style="width: 100%; height: 450px; border:0;" allowfullscreen="" aria-hidden="false"
+    tabindex="0"></iframe>
     </div>
-    <!-- Map End -->
-
-
+    </div>
+    </div>
+    <!--Map End -->
+   
     <!-- Copyright Start -->
     <div class="container-fluid bg-dark text-white py-4">
             <div class="container">
